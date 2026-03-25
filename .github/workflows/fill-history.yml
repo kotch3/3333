@@ -1,6 +1,6 @@
 name: Fill History (Daily Auto + Manual Batch)
 
-on:
+于:
   schedule:
     - cron: '0 20 * * *'          # 每天 UTC 20:00（北京时间 4:00）
   workflow_dispatch:
@@ -8,15 +8,15 @@ on:
       start_date:
         description: '开始日期 (YYYY-MM-DD)'
         required: true
-        default: '2025-01-02'
+        默认: '2025-01-02'
       end_date:
         description: '结束日期 (YYYY-MM-DD) - 留空则默认为今天'
         required: false
-        default: ''
+        默认: ''
       daily_commits:
         description: '每天提交次数 (用于历史填充)'
         required: true
-        default: '12'
+        默认: '12'
 
 jobs:
   fill:
@@ -28,8 +28,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.email "jerry227244928@163.com   # 替换为你的 GitHub 验证邮箱
-          git config --global user.name "kotch3 # 替换为你的 GitHub 用户名
+          git config --global user.email "jerry227244928@163.com"# 替换为你的 GitHub 验证邮箱
+          git config --global user.name "kotch3" # 替换为你的 GitHub 用户名
 
       - name: Generate commits
         env:
