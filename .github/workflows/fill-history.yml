@@ -1,6 +1,6 @@
 name: Fill History (Daily Auto + Manual Batch)
 
-于:
+on:
   schedule:
     - cron: '0 20 * * *'          # 每天 UTC 20:00（北京时间 4:00）
   workflow_dispatch:
@@ -8,15 +8,15 @@ name: Fill History (Daily Auto + Manual Batch)
       start_date:
         description: '开始日期 (YYYY-MM-DD)'
         required: true
-        默认: '2025-01-02'
+        default: '2025-01-02'
       end_date:
         description: '结束日期 (YYYY-MM-DD) - 留空则默认为今天'
         required: false
-        默认: ''
+        default: ''
       daily_commits:
         description: '每天提交次数 (用于历史填充)'
         required: true
-        默认: '12'
+        default: '12'
 
 jobs:
   fill:
